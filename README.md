@@ -1,15 +1,16 @@
 ### Hangfire Nedir ve Asp.Net Core’da _Hangfire Kullanımı
 
-Hangfire Nedir?
+### Hangfire Nedir?
 
 Hangfire, arkada asenkron olarak çalışan, yani kullanıcıyı bekletmeyen (Background job) olarak tanımladığımız işler için kullanılan bir tooldur.
 Quartz.NET ile kıyaslarsak Hangfire’ın kendi arayüzü bulunmaktadır. Hangfire veritabanı üzerinde tablolar oluşturup tablolar üzerinde job’ların job loglarının takibini sağlayabiliyorsunuz. Quartz ise daha basit bir yapıya sahiptir.
 Hangfire mutlaka bir depolama alanına, yani DB’ye ihtiyaç duyar. Depolama alanı olarak, birçok veri tabanını destekler (SQL Server, MSMQ, Redis) gibi. Genellikle Time Schedule şeklinde tekrarlayan belli zaman aralıkları ile çalışan işlerde kullanılsalar da birçok farklı kullanım şekilleri vardır.
-Neden Hangfire Kullanmalısınız?
+<br/>
+### Neden Hangfire Kullanmalısınız?
 
 Aslında IIS üzerinde belli zaman aralıkları ile çalışan yapılar, Cloud ile daha çok hayatımıza girmiştir. Çünkü, eskiden bu tarz işler için örneğin Windows ortamı için, Windows Servisler, daha sonra örneğin Azure ile cross platform çalışan, Worker Serviceler hayatımıza girmiştir. Ama bu tarz servisler için, sanal bir sunucunun ayağı kaldırılması gerekmektedir. Bu da extra bir maliyete yol açtığı için, IIS üzerinde çalışan Quartz.NET, Hangfire gibi toolara ihtiyaç duyulmuştur.
 
-Hangfire Job Çeşitleri
+### Hangfire Job Çeşitleri
 
 Enqueue (Fire & Forget): Tetiklendikten sonra bir kez çalışır.
 
@@ -19,7 +20,7 @@ Recurring: Tekrarlı olarak belirli bir zaman aralığında çalışır.
 
 Continuations: Daha önceden tanımlanmış olan job’ın (schedule) başarılı şekilde çalışması durumunda çalışır.
 
-Hangfire Kurulumu
+### Hangfire Kurulumu
 
 Yapılandırma ayarları program.cs içinde yapılıyor. Uygulama ayağa kalkarken middleware de yazdığımız yapılandırmalar okunacak sonrasında da bu ayarlar kontrol edilecek.
 
@@ -37,7 +38,7 @@ Bu aslında bizim cronServer’ımızdan biridir. Birden fazla uygulama aynı ve
 
 Hangfire’ın bir dashboard’u var bu dashboard’ı kullanmak için aşağıdaki metodu ekleyebilirsiniz.
 
-Hangfire Kullanımı
+### Hangfire Kullanımı
 
 Diyelim ki her gün akşam saatlerinde kullanıcılarımıza sitemize eklenen yeni ürünler hakkında maille bildirim yapmak istiyoruz. Yani biz burada sürekli kendini yenileyen bir job istiyoruz. Bu job belirlediğimiz şartları sağladığında çalışacaktır. Örnek class’ımız aşağıdadır:
 
